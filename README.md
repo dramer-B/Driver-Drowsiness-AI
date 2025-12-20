@@ -1,35 +1,43 @@
-# Blended Joint Attention (Optimized) 🚀
+# 🚗 Driver Drowsiness Detector (AI-Based)
 
-This is a modern Python 3 port of the "Blended Joint Attention" model (originally by Soumitra Agarwal). 
-It has been optimized for real-time CPU performance using OpenCV and Dlib.
+A real-time Computer Vision system that detects driver fatigue using **Eye Aspect Ratio (EAR)** and **Head Pose Estimation**.
+Built as a reproduction and modernization of the **Red Hen Lab GSoC 2016** Audio-Visual module.
 
-## 🎯 Key Improvements
-* **Modernization:** Ported from Python 2.7 to Python 3.x.
-* **Performance:** Optimized frame processing speed from **2 FPS to ~15 FPS** on standard hardware.
-* **Efficiency:** Implemented image pyramid downscaling to reduce CPU load.
-* **Visualization:** Added real-time Gaze Tracking and FPS monitoring.
+## 🎯 Features
+* **Real-time Eye Tracking:** Uses dlib's 68-point facial landmark predictor.
+* **Blink Detection:** Calculates Eye Aspect Ratio (EAR) to detect prolonged eye closure.
+* **Head Pose Estimation:** Tracks face orientation (yaw/pitch/roll) using PNP algorithms.
+* **Dual Alarm System:**
+    * **Visual:** "WAKE UP!" warning overlay.
+    * **Audio:** System beep alert for immediate driver correction.
 
 ## 🛠️ Tech Stack
-* Python 3
-* OpenCV (cv2)
-* Dlib (Machine Learning)
-* NumPy
+* **Language:** Python 3.x
+* **Vision:** OpenCV (`cv2`), Dlib
+* **Math:** NumPy, SciPy
 
 ## 🚀 How to Run
-1.  Install dependencies:
+1.  **Clone the repository:**
     ```bash
-    pip install opencv-python dlib numpy
-    ```
-2.  Run the engine:
-    ```bash
-    python3 ignite.py
+    git clone [https://github.com/dramer-B/Driver-Drowsiness-AI.git](https://github.com/dramer-B/Driver-Drowsiness-AI.git)
+    cd Driver-Drowsiness-AI
     ```
 
-## 👨‍💻 Maintainer
-**Aarav (dramer-B)** - *Optimization & Modernization*
+2.  **Install dependencies:**
+    ```bash
+    pip install opencv-python numpy scipy dlib
+    ```
 
-## 🔗 Acknowledgements
-* **Original Author:** Soumitra Agarwal
-* **Organization:** [The Distributed Red Hen Lab](https://github.com/RedHenLab)
-* **Original Repository:** [SoumitraAgarwal/Blended-Joint-Attention](https://github.com/SoumitraAgarwal/Blended-Joint-Attention)
+3.  **Run the Engine:**
+    * **For Webcam:**
+        ```bash
+        python3 ignite.py
+        ```
+    * **For Video File:**
+        Edit `ignite.py` to point to your `.mp4` file.
 
+## 📊 The Logic (EAR)
+The system uses the Eye Aspect Ratio formula derived from Soukupová and Čech (2016):
+> EAR = (||p2 - p6|| + ||p3 - p5||) / (2 * ||p1 - p4||)
+
+If the EAR falls below **0.25** for a set duration, the alarm triggers.
