@@ -5,6 +5,8 @@ import time
 import cv2
 import dlib
 import fdetect
+import csv
+import datetime
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor(
@@ -16,6 +18,14 @@ def face_pose(video_capture, facecascade):
     prev_time = 0
     new_time = 0
 
+        # --- LOGGING SETUP ---
+    timestamp = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
+    csv_filename = f"driver_log_{timestamp}.csv"
+    file = open(csv_filename, 'w', newline='')
+    writer = csv.writer(file)
+    writer.writerow(['Timestamp', 'EAR', 'State'])
+    print(f"--> RECORDING DATA TO: {csv_filename}")
+        # ---------------------
     while True:
         # Capture frame-by-frame
         ret, frame = video_capture.read()
@@ -49,6 +59,11 @@ def face_pose(video_capture, facecascade):
                 rightEAR = eye_aspect_ratio(rightEye)
                 # ... inside the loop ...
                 avgEAR = (leftEAR + rightEAR) / 2.0
+                ear = (leftEAR + rightEAR) / 2.0
+                now = datetime.datetime.now().strftime('%H:%M:%S.%f')[:-3]
+                state = "DROWSY" if ear < 0.25 else "Active"
+                writer.writerow([now, round(ear, 3), state])
+
 
                 # --- ALARM SYSTEM START ---
                 # Check if eye aspect ratio is below the blink threshold
