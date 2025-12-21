@@ -2,6 +2,12 @@
 
 <img width="421" height="311" alt="image" src="https://github.com/user-attachments/assets/db476d95-c702-4bcf-9d0b-54d6d2964529" />
 
+
+
+https://github.com/user-attachments/assets/ef9cbc84-4282-4cc7-b7e6-d00ef02e866d
+
+
+
 A real-time Computer Vision system that detects driver fatigue using **Eye Aspect Ratio (EAR)** and **Head Pose Estimation**.
 Built as a reproduction and modernization of the **Red Hen Lab GSoC 2016** Audio-Visual module.
 
