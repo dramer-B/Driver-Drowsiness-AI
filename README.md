@@ -1,5 +1,7 @@
 # 🚗 Driver Drowsiness Detector (AI-Based)
 
+<img width="421" height="311" alt="image" src="https://github.com/user-attachments/assets/db476d95-c702-4bcf-9d0b-54d6d2964529" />
+
 A real-time Computer Vision system that detects driver fatigue using **Eye Aspect Ratio (EAR)** and **Head Pose Estimation**.
 Built as a reproduction and modernization of the **Red Hen Lab GSoC 2016** Audio-Visual module.
 
