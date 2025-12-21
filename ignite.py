@@ -1,4 +1,5 @@
 import os
+
 # Set the log level to 'OFF' to hide the camera warnings
 os.environ["OPENCV_LOG_LEVEL"] = "OFF"
 import cv2
