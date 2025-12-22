@@ -1,0 +1,36 @@
+name: Drowsiness AI Tests
+
+# Trigger the robot whenever you push to the main branch
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # Run on a virtual Linux machine in the cloud
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Download your code
+    - uses: actions/checkout@v3
+
+    # Step 2: Install Python
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.9"
+
+    # Step 3: Install only what is needed for the test
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install scipy numpy
+        # We skip the full requirements.txt for now to keep the test fast
+        # (Installing dlib on the cloud takes 10+ minutes!)
+
+    # Step 4: Run the Inspector
+    - name: Run Unit Tests
+      run: |
+        python -m unittest tests/test_math.py
