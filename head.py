@@ -1,3 +1,4 @@
+import utils
 import config
 import os
 from drowsiness import eye_aspect_ratio
@@ -70,8 +71,8 @@ def face_pose(video_capture, facecascade):
                 rightEye = shape_np[42:48]
 
                 # Calculate EAR
-                leftEAR = eye_aspect_ratio(leftEye)
-                rightEAR = eye_aspect_ratio(rightEye)
+                leftEAR = utils.eye_aspect_ratio(leftEye)
+                rightEAR = utils.eye_aspect_ratio(rightEye)
                 # ... inside the loop ...
                 avgEAR = (leftEAR + rightEAR) / 2.0
                 ear = (leftEAR + rightEAR) / 2.0
