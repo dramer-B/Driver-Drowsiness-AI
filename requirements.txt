@@ -1,0 +1,12 @@
+autopep8==2.3.2
+black==25.12.0
+click==8.3.1
+dlib==20.0.0
+mypy_extensions==1.1.0
+numpy==2.2.6
+opencv-python==4.12.0.88
+packaging==25.0
+pathspec==0.12.1
+platformdirs==4.5.1
+pycodestyle==2.14.0
+pytokens==0.3.0
