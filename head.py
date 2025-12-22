@@ -8,10 +8,24 @@ import fdetect
 import csv
 import datetime
 
-detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor(
-    '../dlibcascades/shape_predictor_68_face_landmarks.dat')
+print("--> Loading Face Predictor from ../dlibcascades/ ...")
 
+try:
+    detector = dlib.get_frontal_face_detector()
+    # Using the specific path found in your code
+    predictor_path = '../dlibcascades/shape_predictor_68_face_landmarks.dat'
+    predictor = dlib.shape_predictor(predictor_path)
+    print("--> Predictor loaded successfully.")
+
+except RuntimeError:
+    print("\n--------------------------------------------------")
+    print("❌ CRITICAL ERROR: Predictor file not found!")
+    print(f"Looked in: {predictor_path}")
+    print("--------------------------------------------------")
+    print("Please make sure the 'dlibcascades' folder exists")
+    print("one level up, and contains the .dat file.")
+    print("--------------------------------------------------\n")
+    exit()
 
 def face_pose(video_capture, facecascade):
     video = fdetect.video_read(480, 640)

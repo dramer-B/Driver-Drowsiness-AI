@@ -20,4 +20,14 @@ print("Video loaded successfully. Launching AI...")
 
 # 3. Run the Head Pose logic (detected in your screenshot)
 # 3. Run the Head Pose logic
-BCJA.head_pose(cap)
+try:
+    # Run the main engine
+    BCJA.head_pose(cap)
+
+except KeyboardInterrupt:
+    # This runs when you press Ctrl+C
+    print("\n\n--------------------------------------------------")
+    print("🛑 ENGINE STOPPED BY USER.")
+    print("   Data logs saved.")
+    print("   Goodbye!")
+    print("--------------------------------------------------\n")
