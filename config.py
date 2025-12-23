@@ -5,9 +5,9 @@ FRAME_HEIGHT = 480
 
 # --- Drowsiness Thresholds ---
 # EAR = Eye Aspect Ratio. Lower = Closed Eyes.
-EAR_THRESHOLD = 0.25 
+EAR_THRESHOLD = 0.25
 # Number of consecutive frames the eye must be closed to trigger alarm
-CONSEC_FRAMES_THRESHOLD = 20 
+CONSEC_FRAMES_THRESHOLD = 20
 
 # --- Colors (BGR Format) ---
 COLOR_RED = (0, 0, 255)

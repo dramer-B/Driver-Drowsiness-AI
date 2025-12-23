@@ -47,9 +47,9 @@ def face_pose(video_capture, facecascade):
         ret, frame = video_capture.read()
 
         # --- NEW CODE START ---
-        if not ret: 
+        if not ret:
             break
-        frame = cv2.resize(frame, None, fx=0.5, fy=0.5) 
+        frame = cv2.resize(frame, None, fx=0.5, fy=0.5)
         # --- NEW CODE END ---
 
         if ret:
@@ -108,7 +108,7 @@ def face_pose(video_capture, facecascade):
                 nose = [shape.part(30).x, shape.part(30).y]
                 final_x = 5*nose[0]-4*mid_x[0]
                 final_y = 5*nose[1]-4*mid_y[1]
-                print(f"Nose X: {nose[0]} | Gaze X: {int(final_x)}") # print nose,final_x  
+                print(f"Nose X: {nose[0]} | Gaze X: {int(final_x)}") # print nose,final_x
                 # Use config.COLOR_RED instead of (0, 0, 255)
                 cv2.circle(frame, (int(final_x), int(final_y)), 2, config.COLOR_RED)
                 cv2.circle(frame, (int(nose[0]), int(nose[1])), 2, config.COLOR_RED)
@@ -130,4 +130,3 @@ def face_pose(video_capture, facecascade):
     # Release video capture
     video.release()
     cv2.destroyAllWindows()
-

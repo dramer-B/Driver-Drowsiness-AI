@@ -15,4 +15,3 @@ def eye_aspect_ratio(eye):
 
     # Return the eye aspect ratio
     return ear
-
