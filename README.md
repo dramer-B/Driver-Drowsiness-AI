@@ -6,6 +6,12 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ---
+<br/>
+<div align="center">
+  <img src="assets/demo.gif" alt="Drowsiness Detection Demo" width="600">
+</div>
+<br/>
+
 # 🚗 Driver Drowsiness Detector (AI-Based)
 
 <img width="421" height="311" alt="image" src="https://github.com/user-attachments/assets/db476d95-c702-4bcf-9d0b-54d6d2964529" />
