@@ -1,0 +1,34 @@
+site_name: Driver Drowsiness AI
+site_url: https://dramer-b.github.io/Driver-Drowsiness-AI/
+repo_url: https://github.com/dramer-B/Driver-Drowsiness-AI
+repo_name: Driver-Drowsiness-AI
+
+theme:
+  name: material
+  palette:
+    # Switch to dark mode automatically based on system preference
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Light mode settings
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode settings
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy # Adds a copy button to code blocks
+
+nav:
+  - Home: index.md
