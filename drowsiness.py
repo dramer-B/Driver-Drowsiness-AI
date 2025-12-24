@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def eye_aspect_ratio(eye):
     # 1. Vertical distances (Eyelids)
     A = np.linalg.norm(eye[1] - eye[5])

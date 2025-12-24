@@ -12,4 +12,4 @@ import BCJA
 # BCJA.get_webcam__face()
 # BCJA.get_webcam_face_template()
 # BCJA.scene_change('test.mp4')
-BCJA.gaze_direction('test.mp4')
+BCJA.gaze_direction("test.mp4")

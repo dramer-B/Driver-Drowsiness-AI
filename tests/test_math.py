@@ -1,12 +1,12 @@
 import unittest
 import sys
 import os
-import numpy as np
 
 # Add the parent folder to path so we can import 'utils'
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 import utils
+
 
 class TestDrowsinessMath(unittest.TestCase):
 
@@ -19,8 +19,8 @@ class TestDrowsinessMath(unittest.TestCase):
             (1, 1),  # P2 (Top Left)
             (2, 1),  # P3 (Top Right)
             (3, 0),  # P4 (Right Corner)
-            (2, -1), # P5 (Bottom Right)
-            (1, -1)  # P6 (Bottom Left)
+            (2, -1),  # P5 (Bottom Right)
+            (1, -1),  # P6 (Bottom Left)
         ]
 
         # The vertical distance is 2 (from 1 to -1)
@@ -33,5 +33,6 @@ class TestDrowsinessMath(unittest.TestCase):
         self.assertAlmostEqual(result, 0.6666666666666666, places=5)
         print(f"\n[TEST PASSED] Calculated EAR: {result:.4f} (Expected ~0.6667)")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

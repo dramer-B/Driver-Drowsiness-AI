@@ -9,10 +9,12 @@ click==8.3.1
 colorama==0.4.6
 distlib==0.4.0
 dlib==20.0.0
+-e git+https://github.com/dramer-B/Driver-Drowsiness-AI.git@ed13d6929391fd4b1d9fef38509572c86fd99ef3#egg=driver_drowsiness_ai
 filelock==3.20.1
 ghp-import==2.1.0
 identify==2.6.15
 idna==3.11
+imutils==0.5.4
 Jinja2==3.1.6
 Markdown==3.10
 MarkupSafe==3.0.3
@@ -31,6 +33,7 @@ pathspec==0.12.1
 platformdirs==4.5.1
 pre_commit==4.5.1
 pycodestyle==2.14.0
+pygame==2.6.1
 Pygments==2.19.2
 pymdown-extensions==10.19.1
 python-dateutil==2.9.0.post0
@@ -38,6 +41,7 @@ pytokens==0.3.0
 PyYAML==6.0.3
 pyyaml_env_tag==1.1
 requests==2.32.5
+ruff==0.14.10
 scipy==1.16.3
 six==1.17.0
 urllib3==2.6.2

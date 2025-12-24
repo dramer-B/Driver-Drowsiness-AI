@@ -1,5 +1,6 @@
 from scipy.spatial import distance as dist
 
+
 def eye_aspect_ratio(eye):
     # Compute the euclidean distances between the two sets of
     # vertical eye landmarks (x, y)-coordinates
